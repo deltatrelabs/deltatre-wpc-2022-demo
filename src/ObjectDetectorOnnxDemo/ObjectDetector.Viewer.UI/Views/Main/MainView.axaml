@@ -1,0 +1,53 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:Deltatre.ObjectDetector.Viewer.UI.ViewModels.Main"
+						 xmlns:views="using:Deltatre.ObjectDetector.Viewer.UI.Views.Main"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Deltatre.ObjectDetector.Viewer.UI.Views.Main.MainView">
+
+  <Design.DataContext>
+    <vm:MainViewModel/>
+  </Design.DataContext>
+
+  <Grid RowDefinitions="*" ColumnDefinitions="*">
+    <DockPanel Grid.Row="0" Grid.Column="0">
+      <Menu DockPanel.Dock="Top">
+        <MenuItem Header="_File">
+          <MenuItem Header="_Open" HotKey="Ctrl+O" InputGesture="Ctrl+O" Command="{Binding OpenFolderCommand}" />
+        </MenuItem>
+        <MenuItem Header="_Help">
+          <MenuItem Header="_About" InputGesture="F1" HotKey="F1" />
+        </MenuItem>
+      </Menu>
+      <Grid ColumnDefinitions="Auto,*,Auto" RowDefinitions="Auto,*,Auto" Margin="5">
+        <ProgressBar Grid.Row="0" Grid.ColumnSpan="3" IsIndeterminate="True" IsVisible="{Binding IsBusy}" />
+        <TextBlock Grid.Row="0" Grid.RowSpan="3" Grid.ColumnSpan="3" IsVisible="{Binding ImageCollectionIsEmpty}" Text="Please load images from a folder" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <ListBox Grid.Row="1" Grid.Column="0" Margin="0 0 0 20" Items="{Binding Images}" SelectedItem="{Binding SelectedPreview, Mode=TwoWay}" Background="Transparent" >
+          <ListBox.ItemsPanel>
+            <ItemsPanelTemplate>
+              <StackPanel Orientation="Vertical" />
+            </ItemsPanelTemplate>
+          </ListBox.ItemsPanel>
+
+          <ListBox.ItemTemplate>
+            <DataTemplate>
+              <StackPanel Orientation="Vertical" Width="200">
+                <Image Width="150" Height="150" Stretch="UniformToFill" Source="{Binding Image}" Margin="0,0,0,20" />
+                <TextBlock Text="{Binding FileName}" HorizontalAlignment="Center" Margin="5,0,0,0" />
+              </StackPanel>
+            </DataTemplate>
+          </ListBox.ItemTemplate>
+        </ListBox>
+        <Border Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" BorderThickness="5">
+          <views:DetectionsView Detections="{Binding Detections}" Image="{Binding CurrentImage.Image}" />
+        </Border>
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="3" Orientation="Horizontal">
+          <TextBlock Text="{Binding StatusMessage}" />
+        </StackPanel>
+      </Grid>
+    </DockPanel>
+  </Grid>
+
+</UserControl>

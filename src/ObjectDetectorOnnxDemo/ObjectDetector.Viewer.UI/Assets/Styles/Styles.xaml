@@ -1,0 +1,334 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Design.PreviewWith>
+        <Border Padding="20"></Border>
+    </Design.PreviewWith>
+	
+    <Styles.Resources>
+        <SolidColorBrush x:Key="LogoColor" Color="#660066" />
+		<Color x:Key="BlackColor">#000000</Color>
+		<SolidColorBrush x:Key="DialogOverlayBrush" Color="{DynamicResource BlackColor}" />
+    </Styles.Resources>
+
+	<Style Selector="Grid#OverlayGrid">
+		<Setter Property="ZIndex" Value="1000" />
+		<Setter Property="Background" Value="{DynamicResource DialogOverlayBrush}" />
+		<Setter Property="Opacity" Value="0.2" />
+	</Style>
+	
+    <Style Selector="Border.LayerNavigationToolTip">
+        <Setter Property="BorderThickness" Value="5"/>
+        <Setter Property="CornerRadius" Value="5"/>
+    </Style>
+
+	<Style Selector="Border.GroupBox">
+        <Setter Property="BorderThickness" Value="4" />
+        <Setter Property="BorderBrush" Value="{DynamicResource GroupBoxHeaderBackground}" />
+    </Style>
+
+    <Style Selector="Grid.GroupBoxHeader">
+        <Setter Property="Background" Value="{DynamicResource GroupBoxHeaderBackground}" />
+    </Style>
+
+    <Style Selector="TextBlock.GroupBoxHeader">
+        <Setter Property="Background" Value="{DynamicResource GroupBoxHeaderBackground}" />
+        <Setter Property="Padding" Value="10" />
+        <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+
+    <Style Selector="Border.Header">
+        <Setter Property="Background" Value="{DynamicResource HeaderFooterBackground}" />
+        <Setter Property="Padding" Value="10,20" />
+    </Style>
+
+  <Style Selector="Border.FooterActions">
+      <Setter Property="Background" Value="{DynamicResource HeaderFooterBackground}" />
+      <Setter Property="Padding" Value="10,20" />
+      <Setter Property="Margin" Value="0,10,0, 0" />
+  </Style>
+
+    <Style Selector="TextBox.TransparentReadOnly">
+        <Setter Property="IsReadOnly" Value="True" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="CaretBrush" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+    </Style>
+
+    <Style Selector="TextBox.TransparentReadOnlyMultiLine">
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="IsReadOnly" Value="True" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="CaretBrush" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="AcceptsReturn" Value="True" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+    </Style>
+
+    <Style Selector="TextBox.TransparentReadOnlyMultiLineNoBorder">
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="IsReadOnly" Value="True" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="CaretBrush" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="AcceptsReturn" Value="True" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+    </Style>
+
+    <Style Selector="TextBox.TransparentReadOnlyMultiLineNoBorder:pointerover /template/ Border#border">
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+    <Style Selector="TextBox.TransparentReadOnlyMultiLineNoBorder:pointerover /template/ Border#PART_BorderElement">
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+    <Style Selector="TextBox.TransparentReadOnlyMultiLineNoBorder:focus /template/ Border#border">
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+    <Style Selector="TextBox.TransparentReadOnlyMultiLineNoBorder:focus /template/ Border#PART_BorderElement">
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+    <Style Selector="NumericUpDown.ReadOnly">
+        <Setter Property="IsReadOnly" Value="True" />
+        <Setter Property="AllowSpin" Value="False" />
+        <Setter Property="ShowButtonSpinner" Value="False" />
+    </Style>
+
+  <Style Selector="TextBox.NumericUpDownValueLabel">
+    
+    <Setter Property="IsEnabled" Value="False" />
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="CaretBrush" Value="Transparent" />
+    <Setter Property="BorderBrush" Value="Transparent" />
+      <Setter Property="IsReadOnly" Value="True" />
+      <Setter Property="MinWidth" Value="40" />
+      
+      <Setter Property="CornerRadius" Value="0" />
+      
+      <Setter Property="VerticalAlignment" Value="Stretch" />
+      <Setter Property="HorizontalAlignment" Value="Stretch" />
+      <Setter Property="VerticalContentAlignment" Value="Center" />
+      <Setter Property="HorizontalContentAlignment" Value="Center" />
+    <Setter Property="Padding" Value="5,0" />
+  </Style>
+
+    <Style Selector="TextBox.ValueLabel, NumericUpDown.ValueLabel /template/ TextBox">
+        <Setter Property="InnerRightContent">
+            <Template>
+                <TextBox Classes="NumericUpDownValueLabel" />
+            </Template>
+        </Setter>
+    </Style>
+
+    <Style Selector="TextBox.ValueLabel_percent, NumericUpDown.ValueLabel_percent /template/ TextBox">
+        <Setter Property="InnerRightContent">
+            <Template>
+              <TextBox Classes="NumericUpDownValueLabel" Text="%" ToolTip.Tip="Percent" />
+            </Template>
+        </Setter>
+    </Style>
+
+    <Style Selector="TextBox.ValueLabel_deg, NumericUpDown.ValueLabel_deg /template/ TextBox">
+        <Setter Property="InnerRightContent">
+            <Template>
+              <TextBox Classes="NumericUpDownValueLabel" Text="º" ToolTip.Tip="Degree(s)" />
+            </Template>
+        </Setter>
+    </Style>
+
+    <Style Selector="TextBox.ValueLabel_s, NumericUpDown.ValueLabel_s /template/ TextBox">
+        <Setter Property="InnerRightContent">
+            <Template>
+              <TextBox Classes="NumericUpDownValueLabel" Text="s" ToolTip.Tip="Second(s)" />
+            </Template>
+        </Setter>
+    </Style>
+
+   <Style Selector="TextBox.ValueLabel_um, NumericUpDown.ValueLabel_um /template/ TextBox">
+        <Setter Property="InnerRightContent">
+            <Template>
+                <TextBox Classes="NumericUpDownValueLabel" Text="µm" ToolTip.Tip="Micron(s)" />
+            </Template>
+        </Setter>
+    </Style>
+
+    <Style Selector="TextBox.ValueLabel_mm, NumericUpDown.ValueLabel_mm /template/ TextBox">
+        <Setter Property="InnerRightContent">
+            <Template>
+              <TextBox Classes="NumericUpDownValueLabel" Text="mm" ToolTip.Tip="Millimeter(s)" />
+            </Template>
+        </Setter>
+    </Style>
+
+    <Style Selector="TextBox.ValueLabel_mm2, NumericUpDown.ValueLabel_mm2 /template/ TextBox">
+        <Setter Property="InnerRightContent">
+            <Template>
+              <TextBox Classes="NumericUpDownValueLabel" Text="mm²" ToolTip.Tip="Square Millimeter(s)" />
+            </Template>
+        </Setter>
+    </Style>
+
+    <Style Selector="TextBox.ValueLabel_mm3, NumericUpDown.ValueLabel_mm3 /template/ TextBox">
+        <Setter Property="InnerRightContent">
+            <Template>
+              <TextBox Classes="NumericUpDownValueLabel" Text="mm³" ToolTip.Tip="Cubic Millimeter(s)" />
+            </Template>
+        </Setter>
+    </Style>
+
+    <Style Selector="TextBox.ValueLabel_diametermm, NumericUpDown.ValueLabel_diametermm /template/ TextBox">
+        <Setter Property="InnerRightContent">
+            <Template>
+                <TextBox Classes="NumericUpDownValueLabel" Text="⌀mm" ToolTip.Tip="Diameter Millimeter(s)" />
+            </Template>
+        </Setter>
+    </Style>
+
+    <Style Selector="TextBox.ValueLabel_mmmin, NumericUpDown.ValueLabel_mmmin /template/ TextBox">
+        <Setter Property="InnerRightContent">
+            <Template>
+              <TextBox Classes="NumericUpDownValueLabel" Text="mm/min" ToolTip.Tip="Millimeters per minute" />
+            </Template>
+        </Setter>
+    </Style>
+
+    <Style Selector="TextBox.ValueLabel_px, NumericUpDown.ValueLabel_px /template/ TextBox">
+        <Setter Property="InnerRightContent">
+            <Template>
+              <TextBox Classes="NumericUpDownValueLabel" Text="px" ToolTip.Tip="Pixel(s)" />
+            </Template>
+        </Setter>
+    </Style>
+
+    <Style Selector="TextBox.ValueLabel_px2, NumericUpDown.ValueLabel_px2 /template/ TextBox">
+        <Setter Property="InnerRightContent">
+            <Template>
+              <TextBox Classes="NumericUpDownValueLabel" Text="px²" ToolTip.Tip="Squared Pixel(s)" />
+            </Template>
+        </Setter>
+    </Style>
+
+    <Style Selector="TextBox.ValueLabel_px3, NumericUpDown.ValueLabel_px3 /template/ TextBox">
+        <Setter Property="InnerRightContent">
+            <Template>
+              <TextBox Classes="NumericUpDownValueLabel" Text="px³" ToolTip.Tip="Cubic Pixel(s)" />
+            </Template>
+        </Setter>
+    </Style>
+
+    <Style Selector="TextBox.ValueLabel_diameterpx, NumericUpDown.ValueLabel_diameterpx /template/ TextBox">
+        <Setter Property="InnerRightContent">
+            <Template>
+                <TextBox Classes="NumericUpDownValueLabel" Text="⌀px" ToolTip.Tip="Diameter Pixel(s)" />
+            </Template>
+        </Setter>
+    </Style>
+
+    <Style Selector="TextBox.ValueLabel_sun, NumericUpDown.ValueLabel_sun /template/ TextBox">
+        <Setter Property="InnerRightContent">
+            <Template>
+              <TextBox Classes="NumericUpDownValueLabel" Text="☀" ToolTip.Tip="Brightness" />
+            </Template>
+        </Setter>
+    </Style>
+
+    <Style Selector="TextBox.ValueLabel_GB, NumericUpDown.ValueLabel_GB /template/ TextBox">
+        <Setter Property="InnerRightContent">
+            <Template>
+                <TextBox Classes="NumericUpDownValueLabel" Text="GB" ToolTip.Tip="Gigabyte(s)" />
+            </Template>
+        </Setter>
+    </Style>
+
+    <Style Selector="TextBox.ValueLabel_g, NumericUpDown.ValueLabel_g /template/ TextBox">
+        <Setter Property="InnerRightContent">
+            <Template>
+                <TextBox Classes="NumericUpDownValueLabel" Text="g" ToolTip.Tip="Gram(s)" />
+            </Template>
+        </Setter>
+    </Style>
+
+    <Style Selector="TextBox.ValueLabel_gml, NumericUpDown.ValueLabel_gml /template/ TextBox">
+        <Setter Property="InnerRightContent">
+            <Template>
+                <TextBox Classes="NumericUpDownValueLabel" Text="g/ml" ToolTip.Tip="Grams per milliliter" />
+            </Template>
+        </Setter>
+    </Style>
+
+    <Style Selector="TextBox.ValueLabel_ml, NumericUpDown.ValueLabel_ml /template/ TextBox">
+        <Setter Property="InnerRightContent">
+            <Template>
+                <TextBox Classes="NumericUpDownValueLabel" Text="ml" ToolTip.Tip="Milliliter(s)" />
+            </Template>
+        </Setter>
+    </Style>
+
+    <Style Selector="TextBox.ValueLabel_times, NumericUpDown.ValueLabel_times /template/ TextBox">
+        <Setter Property="InnerRightContent">
+            <Template>
+                <TextBox Classes="NumericUpDownValueLabel" Text="×" ToolTip.Tip="Times" />
+            </Template>
+        </Setter>
+    </Style>
+
+
+  <Style Selector="TextBox.ValueLabel_layers, NumericUpDown.ValueLabel_layers /template/ TextBox">
+        <Setter Property="InnerRightContent">
+            <Template>
+                <TextBox Classes="NumericUpDownValueLabel" Text="Ξ" ToolTip.Tip="Layer(s)" />
+            </Template>
+        </Setter>
+    </Style>
+
+    <Style Selector="TextBox.ValueLabel_ms, NumericUpDown.ValueLabel_ms /template/ TextBox">
+        <Setter Property="InnerRightContent">
+            <Template>
+                <TextBox Classes="NumericUpDownValueLabel" Text="ms" ToolTip.Tip="Milliseconds" />
+            </Template>
+        </Setter>
+    </Style>
+
+    <Style Selector="TextBox.ValueLabel_euro, NumericUpDown.ValueLabel_euro /template/ TextBox">
+        <Setter Property="InnerRightContent">
+            <Template>
+                <TextBox Classes="NumericUpDownValueLabel" Text="€" ToolTip.Tip="Euros" />
+            </Template>
+        </Setter>
+    </Style>
+
+	<!--
+    <Style Selector="NumericUpDown /template/ TextBox:not(.empty)">
+        <Setter Property="MinWidth" Value="0"/>
+    </Style>
+    -->
+
+    <Style Selector="NumericUpDown">
+        <Setter Property="MinWidth" Value="130"/>
+        <Setter Property="ClipValueToMinMax" Value="True"/>
+    </Style>
+
+    <Style Selector="NumericUpDown.ReadOnly">
+        <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="AllowSpin" Value="False"/>
+        <Setter Property="ShowButtonSpinner" Value="False"/>
+    </Style>
+
+    <Style Selector="NumericUpDown.ValueLabel">
+        <Setter Property="MinWidth" Value="180"/>
+    </Style>
+
+    <Style Selector="TabControl">
+        <Setter Property="Padding" Value="0"/>
+    </Style>
+
+    <Style Selector="Expander /template/ ToggleButton">
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Cursor" Value="Hand" />
+    </Style>
+    
+</Styles>

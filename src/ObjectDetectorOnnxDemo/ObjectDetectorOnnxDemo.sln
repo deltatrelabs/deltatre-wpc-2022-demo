@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObjectDetector.Viewer.UI", "ObjectDetector.Viewer.UI\ObjectDetector.Viewer.UI.csproj", "{7CB71753-3655-4FDB-B61A-3B58DE0FEE30}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObjectDetector.YOLOv7", "ObjectDetector.YOLOv7\ObjectDetector.YOLOv7.csproj", "{F640E251-0967-4CAC-9A74-3106B7D46E08}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7CB71753-3655-4FDB-B61A-3B58DE0FEE30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CB71753-3655-4FDB-B61A-3B58DE0FEE30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CB71753-3655-4FDB-B61A-3B58DE0FEE30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CB71753-3655-4FDB-B61A-3B58DE0FEE30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F640E251-0967-4CAC-9A74-3106B7D46E08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F640E251-0967-4CAC-9A74-3106B7D46E08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F640E251-0967-4CAC-9A74-3106B7D46E08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F640E251-0967-4CAC-9A74-3106B7D46E08}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {61AED98B-8D25-4955-941F-0061DA8B2ADB}
+	EndGlobalSection
+EndGlobal
